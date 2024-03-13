@@ -1,4 +1,4 @@
-﻿using GHWeb.Data;
+﻿using GHWeb.DataAccess.Data;
 using GHWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 

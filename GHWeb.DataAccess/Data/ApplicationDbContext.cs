@@ -1,7 +1,7 @@
 ﻿using GHWeb.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace GHWeb.Data
+namespace GHWeb.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

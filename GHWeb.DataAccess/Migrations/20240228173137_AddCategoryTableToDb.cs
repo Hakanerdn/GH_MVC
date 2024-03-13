@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GHWeb.Migrations
+namespace GHWeb.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

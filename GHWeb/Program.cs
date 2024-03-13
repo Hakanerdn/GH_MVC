@@ -1,4 +1,4 @@
-using GHWeb.Data;
+using GHWeb.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
