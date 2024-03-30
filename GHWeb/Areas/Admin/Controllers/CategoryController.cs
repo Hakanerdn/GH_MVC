@@ -2,11 +2,14 @@
 using GHWeb.DataAccess.Repository;
 using GHWeb.DataAccess.Repository.IRepository;
 using GHWeb.Models;
+using GHWeb.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GHWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -14,7 +17,7 @@ namespace GHWeb.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-
+           [Authorize(Roles = SD.Role_Admin)]
         public IActionResult Index()
         {
             List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();

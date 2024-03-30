@@ -3,12 +3,15 @@ using GHWeb.DataAccess.Repository;
 using GHWeb.DataAccess.Repository.IRepository;
 using GHWeb.Models;
 using GHWeb.Models.ViewModels;
+using GHWeb.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GHWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
