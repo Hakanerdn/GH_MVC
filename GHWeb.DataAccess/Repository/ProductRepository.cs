@@ -28,13 +28,13 @@ namespace GHWeb.DataAccess.Repository
                 objFromDb.Price = obj.Price;
                 objFromDb.Price50 = obj.Price50;
                 objFromDb.ListPrice = obj.ListPrice;
-                obj.Price100 = obj.Price100;
+                objFromDb.Price100 = obj.Price100;
                 objFromDb.Description = obj.Description;
                 objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;
                 if (objFromDb.ImageUrl != null)
                 {
-                    objFromDb.ImageUrl = objFromDb.ImageUrl;
+                    objFromDb.ImageUrl = obj.ImageUrl;
                 }
             }
         }
