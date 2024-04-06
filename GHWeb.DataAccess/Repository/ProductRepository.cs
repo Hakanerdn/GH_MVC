@@ -1,5 +1,6 @@
 ﻿using GHWeb.DataAccess.Data;
 using GHWeb.DataAccess.Repository.IRepository;
+using GHWeb.DataAccess.Repository.Repository.IRepository;
 using GHWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace GHWeb.DataAccess.Repository
             _db = db;
         }
 
+
+
         public void Update(Product obj)
         {
             var objFromDb = _db.Products.FirstOrDefault(u => u.Id == obj.Id);
@@ -32,10 +35,11 @@ namespace GHWeb.DataAccess.Repository
                 objFromDb.Description = obj.Description;
                 objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;
-                if (objFromDb.ImageUrl != null)
-                {
-                    objFromDb.ImageUrl = obj.ImageUrl;
-                }
+                objFromDb.ProductImages = obj.ProductImages;
+                //if (obj.ImageUrl != null)
+                //{
+                //    objFromDb.ImageUrl = obj.ImageUrl;
+                //}
             }
         }
     }

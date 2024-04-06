@@ -1,5 +1,6 @@
 ﻿using GHWeb.DataAccess.Data;
 using GHWeb.DataAccess.Repository.IRepository;
+using GHWeb.DataAccess.Repository.Repository.IRepository;
 using GHWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace GHWeb.DataAccess.Repository
         {
             _db = db;
         }
+
+
 
         public void Update(OrderHeader obj)
         {
