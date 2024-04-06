@@ -43,6 +43,8 @@ namespace GHWeb.Models
         [Required]
         public string PostalCode { get; set; }
         [Required]
-        public string? Name { get; set; }
+        public string Name { get; set; }
+
+
     }
 }

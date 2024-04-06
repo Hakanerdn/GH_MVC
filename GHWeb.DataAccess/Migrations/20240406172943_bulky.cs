@@ -5,7 +5,7 @@
 namespace GHWeb.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class addRes : Migration
+    public partial class bulky : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

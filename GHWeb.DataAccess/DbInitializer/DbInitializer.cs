@@ -13,6 +13,7 @@ namespace GHWeb.DataAccess.DbInitializer
 {
     public class DbInitializer : IDbInitializer
     {
+
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _db;
@@ -56,9 +57,9 @@ namespace GHWeb.DataAccess.DbInitializer
                 //if roles are not created, then we will create admin user as well
                 _userManager.CreateAsync(new ApplicationUser
                 {
-                    UserName = "admin@ghweb.com",
-                    Email = "admin@ghweb.com",
-                    Name = "Hakan ERDEN",
+                    UserName = "admin@dotnetmastery.com",
+                    Email = "admin@dotnetmastery.com",
+                    Name = "Bhrugen Patel",
                     PhoneNumber = "1112223333",
                     StreetAddress = "test 123 Ave",
                     State = "IL",
@@ -67,7 +68,7 @@ namespace GHWeb.DataAccess.DbInitializer
                 }, "Admin123*").GetAwaiter().GetResult();
 
 
-                ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@ghweb.com");
+                ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@dotnetmastery.com");
                 _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
 
             }

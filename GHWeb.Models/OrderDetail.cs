@@ -27,5 +27,6 @@ namespace GHWeb.Models
 
         public int Count { get; set; }
         public double Price { get; set; }
+
     }
 }

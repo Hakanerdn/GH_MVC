@@ -14,6 +14,8 @@ namespace GHWeb.Areas.Admin.Controllers
     [Authorize]
     public class OrderController : Controller
     {
+
+
         private readonly IUnitOfWork _unitOfWork;
         [BindProperty]
         public OrderVM OrderVM { get; set; }
@@ -21,10 +23,12 @@ namespace GHWeb.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+
         public IActionResult Index()
         {
             return View();
         }
+
         public IActionResult Details(int orderId)
         {
             OrderVM = new()
@@ -35,7 +39,6 @@ namespace GHWeb.Areas.Admin.Controllers
 
             return View(OrderVM);
         }
-
         [HttpPost]
         [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
         public IActionResult UpdateOrderDetail()
@@ -63,6 +66,7 @@ namespace GHWeb.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Details), new { orderId = orderHeaderFromDb.Id });
         }
+
 
         [HttpPost]
         [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
@@ -200,10 +204,12 @@ namespace GHWeb.Areas.Admin.Controllers
 
 
         #region API CALLS
+
         [HttpGet]
         public IActionResult GetAll(string status)
         {
             IEnumerable<OrderHeader> objOrderHeaders;
+
 
             if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
             {
@@ -236,10 +242,14 @@ namespace GHWeb.Areas.Admin.Controllers
                     break;
                 default:
                     break;
-            }
-            return Json(new { data = objOrderHeaders });
 
-            #endregion
+            }
+
+
+            return Json(new { data = objOrderHeaders });
         }
+
+
+        #endregion        }
     }
 }
