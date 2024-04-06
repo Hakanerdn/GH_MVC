@@ -22,6 +22,7 @@ namespace GHWeb.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
+        
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return View(productList);
         }
@@ -59,8 +60,8 @@ namespace GHWeb.Areas.Customer.Controllers
                 //add cart record
                 _unitOfWork.ShoppingCart.Add(shoppingCart);
                 _unitOfWork.Save();
-                //HttpContext.Session.SetInt32(SD.SessionCart,
-                //_unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
+                HttpContext.Session.SetInt32(SD.SessionCart,
+                _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
             }
             TempData["success"] = "Cart updated successfully";
 
